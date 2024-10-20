@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>個人作品集</title>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f7f7f7;
+    }
+
+    .navbar {
+      background-color: #343a40;
+    }
+
+    .navbar-brand,
+    .nav-link {
+      color: #fff !important;
+    }
+
+    #intro {
+      padding: 100px 0;
+      text-align: center;
+      background: linear-gradient(to right, #74ebd5, #acb6e5);
+      color: white;
+    }
+
+    #portfolio {
+      padding: 50px 0;
+    }
+
+    .card img {
+      height: 200px;
+      object-fit: cover;
+    }
+
+    #skills {
+      background-color: #f8f9fa;
+      padding: 50px 0;
+    }
+
+    .progress-bar {
+      background-color: #6c757d;
+    }
+
+    #contact {
+      padding: 50px 0;
+    }
+
+    footer {
+      background-color: #343a40;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    .progress-bar {
+      transition: width 0s;
+      /* 禁止進度條的默認過渡，將動畫交由anime.js控制 */
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">我的作品集</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#intro">關於我</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#portfolio">作品</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#skills">技能</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">聯絡我</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Introduction Section -->
+  <section id="intro">
+    <div class="container">
+      <h1>你好，我是[你的名字]</h1>
+      <p class="lead">我是專業的 [你的職位，例如：網頁開發者]，擁有豐富的經驗與技能，專注於創建高效且美觀的網站。</p>
+      <a href="#portfolio" class="btn btn-light mt-4">查看我的作品</a>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="container">
+    <h2 class="text-center mb-5">我的作品</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card">
+          <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="作品1">
+          <div class="card-body">
+            <h5 class="card-title">作品名稱1</h5>
+            <p class="card-text">這是我的一個項目，展示了我的技能與創意。</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="作品2">
+          <div class="card-body">
+            <h5 class="card-title">作品名稱2</h5>
+            <p class="card-text">這是我的一個項目，展示了我的技能與創意。</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="作品3">
+          <div class="card-body">
+            <h5 class="card-title">作品名稱3</h5>
+            <p class="card-text">這是我的一個項目，展示了我的技能與創意。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills">
+    <div class="container">
+      <h2 class="text-center mb-5">我的技能</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <h5>HTML / CSS</h5>
+          <div class="progress mb-3">
+            <div class="progress-bar" role="progressbar" data-percentage="90" aria-valuemin="0" aria-valuemax="100">0%</div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <h5>JavaScript</h5>
+          <div class="progress mb-3">
+            <div class="progress-bar" role="progressbar" data-percentage="80" aria-valuemin="0" aria-valuemax="100">0%</div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <h5>React</h5>
+          <div class="progress mb-3">
+            <div class="progress-bar" role="progressbar" data-percentage="75" aria-valuemin="0" aria-valuemax="100">0%</div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <h5>Bootstrap</h5>
+          <div class="progress mb-3">
+            <div class="progress-bar" role="progressbar" data-percentage="85" aria-valuemin="0" aria-valuemax="100">0%</div>
+          </div>
+        </div>
+        <div class="col-md-12 mt-5" style="width: 400px;height: 400px;">
+          <h5 class="text-center">技能分佈</h5>
+          <canvas id="skillsChart" width="400" height="400"></canvas>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Contact Section -->
+  <section id="contact" class="container">
+    <h2 class="text-center mb-5">聯絡我</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <form>
+          <div class="mb-3">
+            <label for="name" class="form-label">姓名</label>
+            <input type="text" class="form-control" id="name" placeholder="輸入你的姓名">
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">電子郵件</label>
+            <input type="email" class="form-control" id="email" placeholder="輸入你的電子郵件">
+          </div>
+          <div class="mb-3">
+            <label for="message" class="form-label">訊息</label>
+            <textarea class="form-control" id="message" rows="5" placeholder="輸入你的訊息"></textarea>
+          </div>
+          <button type="submit" class="btn btn-dark float-end">提交</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 我的作品集. 保留所有權利.</p>
+    <p>
+      <a href="#" class="text-light me-2"><i class="fab fa-facebook fa-2x"></i></a>
+      <a href="#" class="text-light me-2"><i class="fab fa-twitter fa-2x"></i></a>
+      <a href="#" class="text-light me-2"><i class="fab fa-linkedin fa-2x"></i></a>
+      <a href="#" class="text-light me-2"><i class="fab fa-github fa-2x"></i></a>
+    </p>
+  </footer>
+
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // 檢測元素的中間是否進入視窗
+    function isElementInViewport(el) {
+      var rect = el.getBoundingClientRect();
+      var windowHeight = (window.innerHeight || document.documentElement.clientHeight);
+
+      // 這裡檢測元素的中間是否在視窗內
+      var elementMiddle = rect.top + rect.height / 6;
+
+      return (
+        elementMiddle >= 0 &&
+        elementMiddle <= windowHeight
+      );
+    }
+
+    // 限制內部數字更新的頻率
+    function updateProgressText(bar, value) {
+      bar.innerHTML = Math.round(value) + '%';
+    }
+
+    // 啟動動畫的函數
+    function animateProgressBars() {
+      var progressBars = document.querySelectorAll('.progress-bar');
+      progressBars.forEach(function(bar) {
+        var percentage = bar.getAttribute('data-percentage');
+
+        // 動畫進度條寬度
+        anime({
+          targets: bar,
+          width: percentage + '%', // 設置進度條的寬度
+          easing: 'easeInOutQuad', // 平滑的加速減速效果
+          duration: 1900 // 動畫持續時間
+        });
+
+        // 動畫內部數字的變化
+        anime({
+          targets: {
+            value: 0
+          },
+          value: percentage,
+          easing: 'easeInOutQuad', // 與進度條相同的效果
+          duration: 1500, // 動畫持續時間
+          round: 1, // 進度顯示取整
+          update: function(anim) {
+            updateProgressText(bar, anim.animations[0].currentValue); // 動態更新內部文本
+          }
+        });
+      });
+    }
+
+    // 當滾動到技能區域時觸發動畫
+    var skillsSection = document.getElementById('skills');
+    var hasAnimated = false; // 確保動畫只執行一次
+
+    window.addEventListener('scroll', function() {
+      if (isElementInViewport(skillsSection) && !hasAnimated) {
+        animateProgressBars();
+        hasAnimated = true; // 防止重複觸發動畫
+      }
+    });
+  });
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // 檢測元素的中間是否進入視窗
+    function isElementInViewport(el) {
+      var rect = el.getBoundingClientRect();
+      var windowHeight = (window.innerHeight || document.documentElement.clientHeight);
+
+      // 檢測元素的中間是否在視窗內
+      var elementMiddle = rect.top + rect.height / 2;
+
+      return (
+        elementMiddle >= 0 &&
+        elementMiddle <= windowHeight
+      );
+    }
+
+    // 初始化圓餅圖的函數
+    function initPieChart() {
+      var ctx = document.getElementById('skillsChart').getContext('2d');
+      var skillsChart = new Chart(ctx, {
+        type: 'pie', // 圓餅圖類型
+        data: {
+          labels: ['HTML / CSS', 'JavaScript', 'React', 'Bootstrap'], // 技能標籤
+          datasets: [{
+            data: [90, 80, 75, 85], // 對應每個技能的百分比
+            backgroundColor: [
+              'rgba(255, 99, 132, 0.2)',
+              'rgba(54, 162, 235, 0.2)',
+              'rgba(255, 206, 86, 0.2)',
+              'rgba(75, 192, 192, 0.2)'
+            ],
+            borderColor: [
+              'rgba(255, 99, 132, 1)',
+              'rgba(54, 162, 235, 1)',
+              'rgba(255, 206, 86, 1)',
+              'rgba(75, 192, 192, 1)'
+            ],
+            borderWidth: 1
+          }]
+        },
+        options: {
+          responsive: true,
+          animation: {
+            duration: 1500, // 動畫持續時間，設定為3000毫秒（3秒）
+            easing: 'easeOutBounce' // 可以選擇其他的緩動效果
+          },
+          plugins: {
+            legend: {
+              position: 'top', // 圓餅圖的標籤位置
+            },
+            datalabels: {
+              formatter: (value, ctx) => {
+                let label = ctx.chart.data.labels[ctx.dataIndex]; // 獲取標籤名稱
+                return label + '\n' + value + '%'; // 顯示標籤 + 百分比
+              },
+              color: '#000', // 標籤文字顏色
+              font: {
+                weight: 'bold',
+                size: 14
+              },
+              align: 'center',
+              anchor: 'center'
+            }
+          }
+        },
+        plugins: [ChartDataLabels] // 啟用 datalabels 插件
+      });
+    }
+
+    // 當滾動到圓餅圖區域時觸發動畫
+    var pieChartSection = document.getElementById('skillsChart'); // 圓餅圖的 canvas 元素
+    var hasAnimatedPie = false; // 確保動畫只執行一次
+
+    window.addEventListener('scroll', function() {
+      if (isElementInViewport(pieChartSection) && !hasAnimatedPie) {
+        initPieChart(); // 初始化圓餅圖
+        hasAnimatedPie = true; // 防止重複觸發動畫
+      }
+    });
+  });
+</script>
+
+
+
+
+
+</html>

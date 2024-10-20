@@ -8,17 +8,20 @@
   <title>個人作品集</title>
 
   <!-- Bootstrap 5 CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Font Awesome Icons -->
+  <!-- Font Awesome Icons (CDN) -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
+  <!-- jQuery (若有需要，Bootstrap 5 不強制使用) -->
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+  <!-- Bootstrap 5 JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
   <!-- Custom CSS -->
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
-
+  <link href="/style.css" rel="stylesheet"> <!-- 自訂 CSS 路徑 -->
   <style>
     body {
       font-family: 'Arial', sans-serif;
@@ -56,7 +59,11 @@
     }
 
     .progress-bar {
-      background-color: #6c757d;
+      background: linear-gradient(to right, green, blue, red);
+      color: white;
+      /* 文字顏色設為白色以提高對比度 */
+      text-align: center;
+      /* 文字置中 */
     }
 
     #contact {
@@ -76,9 +83,10 @@
     }
   </style>
 </head>
-
+<script src="node_modules/animejs/lib/anime.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
 <body>
-
   <!-- Navigation Bar -->
   <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
@@ -89,7 +97,7 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link" href="#intro">關於我</a>
+            <a class="nav-link" href="#intros">關於我</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#portfolio">作品</a>
@@ -104,82 +112,296 @@
       </div>
     </div>
   </nav>
-
   <!-- Introduction Section -->
   <section id="intro">
-    <div class="container">
-      <h1>你好，我是[你的名字]</h1>
-      <p class="lead">我是專業的 [你的職位，例如：網頁開發者]，擁有豐富的經驗與技能，專注於創建高效且美觀的網站。</p>
-      <a href="#portfolio" class="btn btn-light mt-4">查看我的作品</a>
+    <div class="container-fluid">
+      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="image/pic1.jpg" class="d-block" alt="Image 1">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>你好，我是吳宗恆</h5>
+              <p class="lead">我是專業的 整合式系統開發者。</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="image/pic2s.jpg" class="d-block" alt="Image 2">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>專注於創建高效且美觀的網站</h5>
+              <p class="lead">擁有豐富的經驗與技能。</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="image/pic3.jpg" class="d-block" alt="Image 3">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>有空來看我做的新作</h5>
+              <p class="lead">Programing is golden！</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
     </div>
   </section>
 
+  <style>
+    /* 設定輪播圖佔滿整個 intro 區域 */
+    #intro {
+      height: 800px;
+      /* 設定高度 */
+      position: relative;
+      /* 相對定位 */
+      overflow: hidden;
+      /* 隱藏超出範圍的內容 */
+    }
+
+    /* 使用全寬容器 */
+    .container-fluid {
+      padding: 0;
+      /* 去除內邊距 */
+    }
+
+    #carouselExampleIndicators {
+      width: 80%;
+      /* 設定寬度為 80% */
+      height: 100%;
+      /* 設定高度為 100% */
+      margin: auto;
+      /* 使輪播圖居中 */
+      position: absolute;
+      /* 絕對定位以便於居中 */
+      top: 50%;
+      /* 垂直居中 */
+      left: 50%;
+      /* 水平居中 */
+      transform: translate(-50%, -50%);
+      /* 調整位置 */
+    }
+
+    /* 使圖片保持寬度不超過容器並完全覆蓋 */
+    .carousel-item img {
+      width: 100%;
+      /* 圖片寬度為 100% */
+      height: 1000px;
+      /* 設定高度 */
+      object-fit: cover;
+      /* 確保圖片按比例填滿 */
+      object-position: center;
+    }
+
+    /* 調整輪播圖的標題和描述的樣式 */
+    .carousel-caption {
+      position: absolute;
+      /* 絕對定位 */
+      top: 50%;
+      /* 垂直居中 */
+      left: 50%;
+      /* 水平居中 */
+      transform: translate(-50%, 150%);
+      /* 調整位置至中央 */
+      color: white;
+      /* 字體顏色 */
+      text-align: center;
+      /* 文字居中 */
+      background: rgba(0, 0, 0, 0.5);
+      /* 背景透明度 */
+      border-radius: 5px;
+      /* 加圓角 */
+      padding: 10px;
+      /* 增加內邊距 */
+      width: 80%;
+      height: 100px;
+    }
+  </style>
+  <div class="container mt-5">
+    <div class="row align-items-center">
+      <!-- 圖片區塊 -->
+      <div class="col-md-4 text-center mb-4 mb-md-0">
+        <img src="https://cdn.discordapp.com/avatars/586445288370208778/fdba405936c832b97627642ceed2c601.webp?size=160" alt="Your Photo" class="rounded-circle img-fluid">
+      </div>
+      <!-- 文字內容區塊 -->
+      <div class="col-md-8" id="intros">
+        <h2 class="mb-3">關於我</h2>
+        <p>
+          嗨，我是吳宗恆，對於新事物充滿好奇心，喜歡挑戰自己。
+          我的背景涵蓋了多個領域，包括設計、技術和市場營銷，這使我能夠從多角度思考問題。
+          在工作中，我特別注重團隊合作，始終相信良好的溝通是成功的關鍵。
+          我喜歡學習新知識，並將其應用於實際情況，無論是解決問題還是提升團隊的整體表現。
+          在空閒時間，我喜歡刷題、寫個人網頁以及與朋友分享程式經驗，這讓我不斷拓展視野並增強人際關係。
+        </p>
+      </div>
+    </div>
+  </div>
   <!-- Portfolio Section -->
   <section id="portfolio" class="container">
     <h2 class="text-center mb-5">我的作品</h2>
     <div class="row g-4">
       <div class="col-md-4">
         <div class="card">
-          <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="作品1">
+          <a href="https://kulianpa7.github.io/0918-50915130/">
+            <img src="/image/paper_cut_stone.jpg" class="card-img-top img-fluid" alt="作品1">
+          </a>
           <div class="card-body">
-            <h5 class="card-title">作品名稱1</h5>
-            <p class="card-text">這是我的一個項目，展示了我的技能與創意。</p>
+            <h5 class="card-title">剪刀石頭布</h5>
+            <p class="card-text">0918的作業。</p>
           </div>
         </div>
       </div>
       <div class="col-md-4">
         <div class="card">
-          <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="作品2">
+          <a href="https://kulianpa7.github.io/1009-50915130/">
+            <img src="/image/memory_test.jpg" class="card-img-top" alt="作品2">
+          </a>
           <div class="card-body">
-            <h5 class="card-title">作品名稱2</h5>
-            <p class="card-text">這是我的一個項目，展示了我的技能與創意。</p>
+            <h5 class="card-title">紙牌翻牌記憶大考驗</h5>
+            <p class="card-text">1009的作業。</p>
           </div>
         </div>
       </div>
       <div class="col-md-4">
         <div class="card">
-          <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="作品3">
+          <a href="https://kulianpa7.github.io/taiwan_velicle_test/">
+            <img src="/image//velicle_test.png" class="card-img-top" alt="作品3">
+          </a>
           <div class="card-body">
-            <h5 class="card-title">作品名稱3</h5>
-            <p class="card-text">這是我的一個項目，展示了我的技能與創意。</p>
+            <h5 class="card-title">台灣汽車考照題庫</h5>
+            <p class="card-text">汽車考照刷題</p>
           </div>
         </div>
       </div>
     </div>
   </section>
+    
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-md-12 mb-4">
+        <div class="videobox">
+          <div class="embed-responsive embed-responsive-16by9 w-100">
+            <iframe 
+              class="embed-responsive-item" 
+              src="https://www.youtube.com/embed/Ab9bPQ2dcoA" 
+              title="除了工作，程序员还能这样搞钱！ #chuichui #progamer #beginners #webdev #programming #learning #how #makemoneyonline">
+            </iframe>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12 mb-4">
+        <div class="embed-responsive embed-responsive-16by9 w-100">
+          <div class="videobox">
+            <iframe 
+              class="embed-responsive-item" 
+              src="https://www.youtube.com/embed/0Rs6AasXJag" 
+              title="【亦】x86已死？">
+            </iframe>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12 mb-4">
+        <div class="embed-responsive embed-responsive-16by9 w-100">
+          <div class="videobox">
+            <iframe 
+              class="embed-responsive-item" 
+              src="https://www.youtube.com/embed/2Pf_FCfO24k">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> 
+
+
+  <style>
+    .videobox {
+      position: relative;
+      width: 100%;
+      height: 0;
+      padding-bottom: 56.25%;
+    }
+
+    .videobox iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+
 
   <!-- Skills Section -->
   <section id="skills">
     <div class="container">
-      <h2 class="text-center mb-5">我的技能</h2>
+      <h2 class="text-center mb-5">程式語言能力</h2>
       <div class="row justify-content-center">
         <div class="col-md-6">
-          <h5>HTML / CSS</h5>
+          <h5>網頁前端 html/css/js</h5>
           <div class="progress mb-3">
-            <div class="progress-bar" role="progressbar" data-percentage="90" aria-valuemin="0" aria-valuemax="100">0%</div>
+            <div class="progress-bar" role="progressbar" data-percentage="50" aria-valuemin="0" aria-valuemax="100">0%</div>
           </div>
         </div>
         <div class="col-md-6">
-          <h5>JavaScript</h5>
+          <h5>網頁後端 nodejs:express.js/ejs/MVC架構</h5>
+          <div class="progress mb-3">
+            <div class="progress-bar" role="progressbar" data-percentage="95" aria-valuemin="0" aria-valuemax="100">0%</div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <h5>mysql</h5>
           <div class="progress mb-3">
             <div class="progress-bar" role="progressbar" data-percentage="80" aria-valuemin="0" aria-valuemax="100">0%</div>
           </div>
         </div>
         <div class="col-md-6">
-          <h5>React</h5>
+          <h5>postgresql</h5>
           <div class="progress mb-3">
-            <div class="progress-bar" role="progressbar" data-percentage="75" aria-valuemin="0" aria-valuemax="100">0%</div>
+            <div class="progress-bar" role="progressbar" data-percentage="80" aria-valuemin="0" aria-valuemax="100">0%</div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <h5>C/C++</h5>
+          <div class="progress mb-3">
+            <div class="progress-bar" role="progressbar" data-percentage="90" aria-valuemin="0" aria-valuemax="100">0%</div>
           </div>
         </div>
         <div class="col-md-6">
-          <h5>Bootstrap</h5>
+          <h5>C#</h5>
+          <div class="progress mb-3">
+            <div class="progress-bar" role="progressbar" data-percentage="40" aria-valuemin="0" aria-valuemax="100">0%</div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <h5>python</h5>
           <div class="progress mb-3">
             <div class="progress-bar" role="progressbar" data-percentage="85" aria-valuemin="0" aria-valuemax="100">0%</div>
           </div>
         </div>
-        <div class="col-md-12 mt-5" style="width: 400px;height: 400px;">
+        <div class="col-md-6">
+          <h5>Lua</h5>
+          <div class="progress mb-3">
+            <div class="progress-bar" role="progressbar" data-percentage="75" aria-valuemin="0" aria-valuemax="100">0%</div>
+          </div>
+        </div>
+
+        <div class="col-md-6 mt-5" style="width: 400px;height: 400px;">
           <h5 class="text-center">技能分佈</h5>
           <canvas id="skillsChart" width="400" height="400"></canvas>
+        </div>
+        <div class="col-md-6 mt-5" style="width: 400px;height: 400px;">
+          <h5 class="text-center">實作項目分佈</h5>
+          <canvas id="stocksChart" width="400" height="400"></canvas>
         </div>
       </div>
     </div>
@@ -210,171 +432,44 @@
     </div>
   </section>
 
+  <style>
+    .card-img-top {
+      height: auto;
+      /* 保持圖片比例 */
+      display: block;
+      /* 將圖片設為區塊元素 */
+      margin-left: auto;
+      /* 自動左邊距 */
+      margin-right: auto;
+      /* 自動右邊距 */
+    }
 
+    .card-body {
+      background-color: #36393f;
+      /* Discord 的灰色 */
+      color: white;
+      /* 將文字顏色設為白色以提高可讀性 */
+      text-align: center;
+      /* 置中顯示文字 */
+    }
+  </style>
 
   <!-- Footer -->
   <footer>
     <p>&copy; 2024 我的作品集. 保留所有權利.</p>
     <p>
-      <a href="#" class="text-light me-2"><i class="fab fa-facebook fa-2x"></i></a>
-      <a href="#" class="text-light me-2"><i class="fab fa-twitter fa-2x"></i></a>
-      <a href="#" class="text-light me-2"><i class="fab fa-linkedin fa-2x"></i></a>
-      <a href="#" class="text-light me-2"><i class="fab fa-github fa-2x"></i></a>
+      <a href="https://www.instagram.com/dingding1092837465/" class="text-light me-2"><i class="fab fa-instagram fa-2x"></i></a>
+      <a href="https://x.com/ding_brother" class="text-light me-2"><i class="fab fa-x fa-2x"></i></a>
+      <a href="https://www.linkedin.com/in/ding-brother-%E4%B8%81%E5%BC%9F-9759b2291/" class="text-light me-2"><i class="fab fa-linkedin fa-2x"></i></a>
+      <a href="https://github.com/kulianpa7" class="text-light me-2"><i class="fab fa-github fa-2x"></i></a>
+      <a href="https://discord.gg/52qYnbbC2v" class="text-light me-2"><i class="fab fa-discord fa-2x"></i></a>
     </p>
+    
   </footer>
-
+  <script src="/skillbar.js"></script>
+  <script src="/skillchart.js"></script>
+  <script src="/stockchart.js"></script>
   <!-- Bootstrap 5 JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    // 檢測元素的中間是否進入視窗
-    function isElementInViewport(el) {
-      var rect = el.getBoundingClientRect();
-      var windowHeight = (window.innerHeight || document.documentElement.clientHeight);
-
-      // 這裡檢測元素的中間是否在視窗內
-      var elementMiddle = rect.top + rect.height / 6;
-
-      return (
-        elementMiddle >= 0 &&
-        elementMiddle <= windowHeight
-      );
-    }
-
-    // 限制內部數字更新的頻率
-    function updateProgressText(bar, value) {
-      bar.innerHTML = Math.round(value) + '%';
-    }
-
-    // 啟動動畫的函數
-    function animateProgressBars() {
-      var progressBars = document.querySelectorAll('.progress-bar');
-      progressBars.forEach(function(bar) {
-        var percentage = bar.getAttribute('data-percentage');
-
-        // 動畫進度條寬度
-        anime({
-          targets: bar,
-          width: percentage + '%', // 設置進度條的寬度
-          easing: 'easeInOutQuad', // 平滑的加速減速效果
-          duration: 1900 // 動畫持續時間
-        });
-
-        // 動畫內部數字的變化
-        anime({
-          targets: {
-            value: 0
-          },
-          value: percentage,
-          easing: 'easeInOutQuad', // 與進度條相同的效果
-          duration: 1500, // 動畫持續時間
-          round: 1, // 進度顯示取整
-          update: function(anim) {
-            updateProgressText(bar, anim.animations[0].currentValue); // 動態更新內部文本
-          }
-        });
-      });
-    }
-
-    // 當滾動到技能區域時觸發動畫
-    var skillsSection = document.getElementById('skills');
-    var hasAnimated = false; // 確保動畫只執行一次
-
-    window.addEventListener('scroll', function() {
-      if (isElementInViewport(skillsSection) && !hasAnimated) {
-        animateProgressBars();
-        hasAnimated = true; // 防止重複觸發動畫
-      }
-    });
-  });
-</script>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    // 檢測元素的中間是否進入視窗
-    function isElementInViewport(el) {
-      var rect = el.getBoundingClientRect();
-      var windowHeight = (window.innerHeight || document.documentElement.clientHeight);
-
-      // 檢測元素的中間是否在視窗內
-      var elementMiddle = rect.top + rect.height / 2;
-
-      return (
-        elementMiddle >= 0 &&
-        elementMiddle <= windowHeight
-      );
-    }
-
-    // 初始化圓餅圖的函數
-    function initPieChart() {
-      var ctx = document.getElementById('skillsChart').getContext('2d');
-      var skillsChart = new Chart(ctx, {
-        type: 'pie', // 圓餅圖類型
-        data: {
-          labels: ['HTML / CSS', 'JavaScript', 'React', 'Bootstrap'], // 技能標籤
-          datasets: [{
-            data: [90, 80, 75, 85], // 對應每個技能的百分比
-            backgroundColor: [
-              'rgba(255, 99, 132, 0.2)',
-              'rgba(54, 162, 235, 0.2)',
-              'rgba(255, 206, 86, 0.2)',
-              'rgba(75, 192, 192, 0.2)'
-            ],
-            borderColor: [
-              'rgba(255, 99, 132, 1)',
-              'rgba(54, 162, 235, 1)',
-              'rgba(255, 206, 86, 1)',
-              'rgba(75, 192, 192, 1)'
-            ],
-            borderWidth: 1
-          }]
-        },
-        options: {
-          responsive: true,
-          animation: {
-            duration: 1500, // 動畫持續時間，設定為3000毫秒（3秒）
-            easing: 'easeOutBounce' // 可以選擇其他的緩動效果
-          },
-          plugins: {
-            legend: {
-              position: 'top', // 圓餅圖的標籤位置
-            },
-            datalabels: {
-              formatter: (value, ctx) => {
-                let label = ctx.chart.data.labels[ctx.dataIndex]; // 獲取標籤名稱
-                return label + '\n' + value + '%'; // 顯示標籤 + 百分比
-              },
-              color: '#000', // 標籤文字顏色
-              font: {
-                weight: 'bold',
-                size: 14
-              },
-              align: 'center',
-              anchor: 'center'
-            }
-          }
-        },
-        plugins: [ChartDataLabels] // 啟用 datalabels 插件
-      });
-    }
-
-    // 當滾動到圓餅圖區域時觸發動畫
-    var pieChartSection = document.getElementById('skillsChart'); // 圓餅圖的 canvas 元素
-    var hasAnimatedPie = false; // 確保動畫只執行一次
-
-    window.addEventListener('scroll', function() {
-      if (isElementInViewport(pieChartSection) && !hasAnimatedPie) {
-        initPieChart(); // 初始化圓餅圖
-        hasAnimatedPie = true; // 防止重複觸發動畫
-      }
-    });
-  });
-</script>
-
-
-
-
 
 </html>

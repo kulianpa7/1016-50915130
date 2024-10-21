@@ -140,3 +140,9 @@ a.sidebar-link:hover {
     transform: rotate(45deg);
     transition: all .2s ease-out;
 }
+body {
+    padding-top: 56px; /* 根據實際導航欄高度調整 */
+    padding-bottom: 56px; /* 根據實際頁腳高度調整 */
+  }
+
+  

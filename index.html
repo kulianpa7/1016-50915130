@@ -88,7 +88,7 @@
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
 <body>
   <!-- Navigation Bar -->
-  <nav class="navbar navbar-expand-lg navbar-dark">
+  <nav class="navbar navbar-expand-lg navbar-dark" style="position: fixed; top: 0; width: 100%; z-index: 1000;">
     <div class="container">
       <a class="navbar-brand" href="#">我的作品集</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -453,19 +453,17 @@
       /* 置中顯示文字 */
     }
   </style>
-
   <!-- Footer -->
-  <footer>
-    <p>&copy; 2024 我的作品集. 保留所有權利.</p>
-    <p>
+  <footer style="position: fixed; bottom: 0; width: 100%; background-color: #333; text-align: center; padding: 1px;">
+    <p style="margin-top: 10px;">
       <a href="https://www.instagram.com/dingding1092837465/" class="text-light me-2"><i class="fab fa-instagram fa-2x"></i></a>
       <a href="https://x.com/ding_brother" class="text-light me-2"><i class="fab fa-x fa-2x"></i></a>
       <a href="https://www.linkedin.com/in/ding-brother-%E4%B8%81%E5%BC%9F-9759b2291/" class="text-light me-2"><i class="fab fa-linkedin fa-2x"></i></a>
       <a href="https://github.com/kulianpa7" class="text-light me-2"><i class="fab fa-github fa-2x"></i></a>
       <a href="https://discord.gg/52qYnbbC2v" class="text-light me-2"><i class="fab fa-discord fa-2x"></i></a>
     </p>
-    
   </footer>
+
   <script src="skillbar.js"></script>
   <script src="skillchart.js"></script>
   <script src="stockchart.js"></script>
